@@ -23,7 +23,6 @@ function App() {
     fetch('/books').then((res) => res.json()).then(data => {
      if(data && data.list.length){
       let newData= data?.list && data?.list?.filter((item,index)=> item._id.slice(0, id.length)===String(id))
-      console.log("newData", newData);
       setData(newData);
         // setData(data.list)
      }
