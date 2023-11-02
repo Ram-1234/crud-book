@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const {getAllBooks,addBook,deleteBook,updateBook } = require("./db/service")
+const {getAllBooks,addBook,deleteBook,updateBook,searchBook } = require("./db/service")
 const connectDB = require("./db/connect")
 const port = 8080;
 
@@ -45,6 +45,16 @@ app.post('/updatebook', async (req,res)=>{
    } catch (error) {
     console.log(error)
    }
+})
+/** find a book */
+
+app.post('/findbook',async(req,res)=>{
+    try {
+        await searchBook(req.body);
+        res.send('found a book');
+    } catch (error) {
+      console.log(error)  
+    }
 })
 
 app.listen(port, async()=>{

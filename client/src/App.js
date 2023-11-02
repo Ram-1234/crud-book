@@ -28,6 +28,25 @@ function App() {
      }
     })
 
+    /**  */
+    (async()=>{
+      try {
+        const response = await fetch("/findbook", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ _id: id }),
+        });
+        if(response.ok){
+          // setBook(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })()
+    
+
   }, [id])
 
   function fetcAllBook() {

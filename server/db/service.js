@@ -39,4 +39,14 @@ const updateBook=async (jsonData)=>{
     }
    }
 
-   module.exports={getAllBooks, deleteBook,updateBook, addBook}
+   /*** search a book */
+   const searchBook=async (jsonData)=>{
+      const filter = { _id:new ObjectId(jsonData._id) }
+      try {
+         await Product.find(filter)
+      } catch (error) {
+         console.log(error)
+      }
+   }
+
+   module.exports={getAllBooks, deleteBook,updateBook, addBook,searchBook}
