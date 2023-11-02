@@ -1,7 +1,7 @@
 # crud-book
 
 ## API endpoints and their usage
-> **1**: Frontend: http://localhost:3000/ `docs`
+> **1**: Frontend: http://localhost:3000/ `docs`,
 > **2**: Add a book: http://localhost:8080/addbook
 > **3**: Delete a book: http://localhost:8080/deletebook
 > **4**: Update a book: http://localhost:8080/updatebook
